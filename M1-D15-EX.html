@@ -70,6 +70,280 @@
           Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
         */
     -->
-  <head> </head>
-  <body></body>
+  <head> 
+    <title>D15 Solo- Project</title>
+    <style>
+      body{
+        max-width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+      }
+      
+      h1{
+        text-align: center;
+      }
+      
+      a{
+        color: chartreuse;
+      }
+      
+      .bordered-element {
+        border: solid 2px blue;
+      }
+
+      table {
+        border: 1px solid;
+        border-radius: 10px;
+      }
+
+      p{
+        margin: 50px;
+      }
+
+      .bigger-and-bolder-font{
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .hidden {
+        visibility: hidden;
+      }
+
+      td {
+        border: dotted 1px red;
+        /* border: solid 1px green; */
+      }
+
+      th {
+        border: dotted 1px red;
+      }
+
+      .red-bg{
+        background-color: red;
+      }
+      
+      </style>
+  </head>
+  <body>
+    <h1>Solo Project</h1>
+    <ol>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+    </ol>
+    <hr>
+    <table>
+      <tbody>
+        <tr>
+          <th>th.1</th>
+          <th><a href="http://www.google.com"><img src="sign-info-icon.png"></a>
+          </th>
+          <th>th.3</th>
+          <th>th.4</th>
+          <th>th.5</th>
+        </tr>
+        <tr>
+          <td>td.1</td>
+          <td><a href="http://www.google.com"><img src="sign-info-icon.png"></a>
+          </td>
+          <td>td.3</td>
+          <td>td.4</td>
+          <td>td.5</td>     
+        </tr>
+        <tr>
+          <td>td.1</td>
+          <td><a href="http://www.google.com"><img src="sign-info-icon.png"></a>
+          </td>
+          <td>td.3</td>
+          <td>td.4</td>
+          <td>td.5</td>     
+        </tr>
+        <tr>
+          <td>td.1</td>
+          <td><a href="http://www.google.com"><img src="sign-info-icon.png"></a>
+          </td>
+          <td>td.3</td>
+          <td>td.4</td>
+          <td>td.5</td>     
+        </tr>
+        <tr>
+          <td>td.1</td>
+          <td><a href="http://www.google.com"><img src="sign-info-icon.png"></a>
+          </td>
+          <td>td.3</td>
+          <td colspan="2">td.4 till td.5</td>     
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <div>
+      <p>
+        <ul>
+          <li>First</li>
+          <li>Second</li>
+          <li>Third</li>
+        </ul>
+      </p>
+      <p><a href="http://www.google.com">Just Click Here!!</a></p>
+    </div>
+    <footer>
+      <div>
+        This is a footer
+      </div> 
+    </footer>
+       
+    <script>
+      // Exercise 21
+
+      let x = "John"
+      let y = "Doe"
+
+      console.log(x + '' + y)
+      // Exercise 22
+      let person = {
+        name : "John",
+        surname: "Wick",
+        email: "jwick@email.com",
+      }
+      // Exercise 23
+      delete person.email
+      console.log(person);
+      // Exercise 24
+      let fruits = ["apple","banana","orange","kiwi","watermelon","honeydew","grapes","blueberry","strawberry","melon"]
+      // Exercise 25
+      console.log(fruits)
+      // Exercise 26
+      let randomNumberArray = []
+      for (let i = 0; i < 100; i++) {
+        randomNumberArray.push(Math.floor(Math.random()*100));
+      }
+      console.log(randomNumberArray)
+      // Exercise 27
+      console.log("Min:" + Math.min(...randomNumberArray))
+      console.log("Max:" + Math.max(...randomNumberArray))
+      //or
+      function maxAndMin(numbers){
+        let max = numbers[0]
+        let min = numbers[0]
+        for (let i = 0; i < numbers.length - 1; i++) {
+          if (numbers[i] > max){
+            max = numbers[i]
+          }
+          if (numbers[i] < min){
+            min = numbers[i]
+          }
+        }
+        console.log("Max:" + max)
+        console.log("Min:" + min)
+      }
+      console.log(maxAndMin(randomNumberArray))
+      // Exercise 28
+      let arrayOfArrays = []
+
+      for (let i = 0; i < 10; i++) {
+        let innerArray = []
+        for (let j = 0; j < 10; j++) {
+          innerArray.push(Math.floor(Math.random()*10));
+        }
+        arrayOfArrays.push(innerArray)
+      }
+      console.log(arrayOfArrays);
+      // Exercise 29
+      function gettingLongerArray(array1,array2){
+        if (array1.length > array2.length) {
+          return array1
+        } else {
+          return array2
+        }
+      }
+      console.log(gettingLongerArray([1,2,4,5],[1,2,7,8,9]));
+      // Exercise 30
+      function higherSumArray(array1,array2) {
+        let sum1 = 0
+        for (let number of array1){
+          sum1 += number
+        }
+        let sum2 = 0
+        for (let number of array2){
+          sum2 += number
+        }
+
+        if (sum1 > sum2) {
+          return "array1:" + sum1
+        } else {
+          return "array2:" + sum2
+        }
+      }
+      console.log(higherSumArray([1,2,4,5],[1,2,7,8,9]));
+
+      // Exercise 31
+      let container = document.getElementById("container")
+
+      //Exerceise 32
+      let tdNode = document.querySelectorAll("td")
+
+      //Exercise 33
+      tdNode.forEach(tdNode => {
+        tdNode.innerText = "tdNode"
+      });
+
+      //Exercise 34
+      function changingTheHeadingText(string) {
+        let h1Node = document.querySelector("h1")
+        h1Node.innerText = string;
+      }
+      // changingTheHeadingText("Bla Bla Bla")
+
+      //Exercise 35
+      function addingRowToTable (){
+        let tbodyNode = document.querySelector("tbody")
+        let newTr = document.createElement("td")
+        for (let i = 0; i < 5; i++) {
+          let newTd = document.createElement("td")
+          newTd.innerText = "newTd";
+          newTr.appendChild(newTd);   
+        }
+        tbodyNode.appendChild(newTr);
+      }
+      addingRowToTable()
+
+      //Exercise 36
+      function addingClassListToRow() {
+        let trs = document.querySelectorAll("tr")
+        trs.forEach(tr =>{
+          tr.classList.add("test")
+        })
+      }
+
+      //Exercise 37
+      function addingRedBg() {
+        let links = document.querySelectorAll("a")
+        links.forEach(link =>{
+          link.classList.add("red-bg")
+        })
+      }
+      addingRedBg()
+
+      //Exercise 38
+      window.onload = function () {
+        console.log("Page Loaded");
+      }
+
+      // Exercise 39
+      let ul = document.querySelector("ul");
+      function addingItemToUL() {
+        let newLi = document.createElement("li")
+        newLi.innerText = "New Item!!"
+        ul.appendChild(newLi)
+      }
+
+      addingItemToUL()
+
+      // Exercise 40
+      function emptyList() {
+        ul.innerHTML = ""
+      }
+      emptyList()
+    </script>
+  </body>
 </html>
