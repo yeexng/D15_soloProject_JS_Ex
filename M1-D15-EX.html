@@ -225,7 +225,7 @@
       function maxAndMin(numbers){
         let max = numbers[0]
         let min = numbers[0]
-        for (let i = 0; i < numbers.length - 1; i++) {
+        for (let i = 1; i < numbers.length; i++) {
           if (numbers[i] > max){
             max = numbers[i]
           }
@@ -286,6 +286,8 @@
       tdNode.forEach(tdNode => {
         tdNode.innerText = "tdNode"
       });
+      // array.forEach(function(currentVal,index, arr), this Value)
+      //
 
       //Exercise 34
       function changingTheHeadingText(string) {
@@ -297,7 +299,7 @@
       //Exercise 35
       function addingRowToTable (){
         let tbodyNode = document.querySelector("tbody")
-        let newTr = document.createElement("td")
+        let newTr = document.createElement("tr")
         for (let i = 0; i < 5; i++) {
           let newTd = document.createElement("td")
           newTd.innerText = "newTd";
@@ -305,7 +307,7 @@
         }
         tbodyNode.appendChild(newTr);
       }
-      addingRowToTable()
+      
 
       //Exercise 36
       function addingClassListToRow() {
